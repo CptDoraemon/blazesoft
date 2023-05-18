@@ -13,7 +13,7 @@ export interface BookWithID extends Book {
 }
 
 // Define a type for the slice state
-interface BookState {
+export interface BookState {
   books: BookWithID[],
   nextId: number
 }
