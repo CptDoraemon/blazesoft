@@ -5,6 +5,7 @@ import useBookStore from "@/pageComponents/BookStore/useBookStore";
 import BookItem from "@/pageComponents/BookStore/BookItem";
 import {useMount} from "react-use";
 import AddBookButton from "@/pageComponents/BookStore/AddBookButton";
+import {Box, Grid} from "@mui/material";
 
 const Root = styled('div')(({ theme }) => ({
   padding: theme.spacing(2)
@@ -22,11 +23,15 @@ const BookStore = () => {
       <Root>
         <AddBookButton/>
 
-        <div>
+        <Grid container my={{xs: 1, md: 2}} spacing={{xs: 1, md: 2}}>
           {
-            books.map(book => <BookItem key={book.id} book={book} />)
+            books.map(book => (
+              <Grid item key={book.id} xs={12}>
+                <BookItem book={book} />
+              </Grid>
+            ))
           }
-        </div>
+        </Grid>
       </Root>
     </WidthWrapper>
   )

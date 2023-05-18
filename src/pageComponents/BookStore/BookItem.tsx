@@ -60,26 +60,26 @@ const BookItem = ({book}: BookItemProps) => {
   }, [book.id, editDialogOpen, put]);
 
   return (
-    <Root container my={{xs: 1, md: 2}} p={{xs: 1, md: 2}}>
+    <Root container p={{xs: 1, md: 2}} data-cy={"book-item"}>
 
       <Grid item xs={12}>
         <TopRow>
-          <Title component={"h2"} variant={"h5"}>
+          <Title component={"h2"} variant={"h5"} data-cy={"book-item-name"}>
             {book.name}
           </Title>
-          <Price component={"span"} variant={"h5"}>
+          <Price component={"span"} variant={"h5"} data-cy={"book-item-price"}>
             ${book.price}
           </Price>
         </TopRow>
       </Grid>
 
       <Grid item xs={12}>
-        <Category variant={"caption"}>
+        <Category variant={"caption"} data-cy={"book-item-category"}>
           {book.category}
         </Category>
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={12} data-cy={"book-item-description"}>
         <Typography>
           {book.description}
         </Typography>
