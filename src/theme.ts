@@ -21,7 +21,10 @@ let theme = createTheme({
     },
     error: {
       main: '#ff7043'
-    }
+    },
+  },
+  shape: {
+    borderRadius: 12
   },
   typography: {
     "fontFamily": "'Open Sans',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",

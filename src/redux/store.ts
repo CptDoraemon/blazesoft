@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import booksReducer from "./slices/book";
+import {bookSlice} from "./slices/book/book";
 
-const store = configureStore({
-  reducer: {
-    books: booksReducer
-  },
-})
+const getStore = () => {
+  return configureStore({
+    reducer: {
+      books: bookSlice.reducer
+    },
+  });
+}
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+export const store = getStore();
+
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
