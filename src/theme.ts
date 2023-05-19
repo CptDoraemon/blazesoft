@@ -3,7 +3,7 @@ import {createTheme, responsiveFontSizes} from "@mui/material";
 let theme = createTheme({
   palette: {
     primary: {
-      main: 'rgb(3, 16, 36)',
+      main: '#293056',
       light: 'rgb(129, 186, 245)',
       contrastText: '#fff',
     },
@@ -21,7 +21,10 @@ let theme = createTheme({
     },
     error: {
       main: '#ff7043'
-    }
+    },
+  },
+  shape: {
+    borderRadius: 12
   },
   typography: {
     "fontFamily": "'Open Sans',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
