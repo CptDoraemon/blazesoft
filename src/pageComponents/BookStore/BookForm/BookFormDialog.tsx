@@ -3,16 +3,13 @@ import {Dialog, DialogContent, DialogTitle} from "@mui/material";
 import Box from "@mui/material/Box";
 import BookForm, {BookFormProps} from "@/pageComponents/BookStore/BookForm/BookForm";
 
-interface BookFormDialogProps extends BookFormProps {
-  open: boolean
-}
+interface BookFormDialogProps extends BookFormProps {}
 
-const BookFormDialog = (props: BookFormDialogProps) => {
-  const {open, ...formProps} = props;
+const BookFormDialog = (formProps: BookFormDialogProps) => {
 
   return (
     <Dialog
-      open={open}
+      open={true}
       onClose={() => false}
       aria-labelledby="alert-dialog-title"
       fullWidth

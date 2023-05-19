@@ -15,14 +15,13 @@ interface ConfirmDialogProps {
   title?: string,
   content: string | JSX.Element,
   onYes: () => void,
-  onNo: () => void,
-  open: boolean,
+  onNo: () => void
 }
 
-const ConfirmDialog = ({open, title, content, onYes, onNo}: ConfirmDialogProps) => {
+const ConfirmDialog = ({title, content, onYes, onNo}: ConfirmDialogProps) => {
   return (
     <Dialog
-      open={open}
+      open={true}
       onClose={() => false}
       fullWidth
       maxWidth={'md'}

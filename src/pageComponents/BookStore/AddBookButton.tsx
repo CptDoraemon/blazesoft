@@ -4,7 +4,8 @@ import useOpenState from "@/utils/useOpenState";
 import {Book} from "@/redux/slices/book/book";
 import useBookStore from "@/pageComponents/BookStore/useBookStore";
 import {Button as MuiButton} from "@mui/material";
-import BookFormDialog from "@/pageComponents/BookStore/BookForm/BookFormDialog";
+import dynamic from 'next/dynamic';
+const BookFormDialog = dynamic(() => import("@/pageComponents/BookStore/BookForm/BookFormDialog"));
 
 const Button = styled(MuiButton)(({ theme }) => ({
   fontSize: theme.typography.h5.fontSize,
@@ -32,12 +33,14 @@ const AddBookButton = () => {
         Add Book
       </Button>
 
-      <BookFormDialog
-        open={editDialogOpen.isOpen}
-        onSave={saveEdit}
-        onCancel={editDialogOpen.handleClose}
-        initValues={null}
-      />
+      {
+        editDialogOpen.isOpen &&
+        <BookFormDialog
+          onSave={saveEdit}
+          onCancel={editDialogOpen.handleClose}
+          initValues={null}
+        />
+      }
     </>
   )
 };

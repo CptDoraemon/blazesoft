@@ -6,8 +6,10 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import useBookStore from "@/pageComponents/BookStore/useBookStore";
 import useOpenState from "@/utils/useOpenState";
-import ConfirmDialog from "@/publicComponents/ConfirmDialog";
-import BookFormDialog from "@/pageComponents/BookStore/BookForm/BookFormDialog";
+
+import dynamic from 'next/dynamic';
+const BookFormDialog = dynamic(() => import("@/pageComponents/BookStore/BookForm/BookFormDialog"));
+const ConfirmDialog = dynamic(() => import("@/publicComponents/ConfirmDialog"));
 
 const Root = styled(Grid)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
@@ -110,19 +112,24 @@ const BookItem = ({book}: BookItemProps) => {
         </Grid>
       </Grid>
 
-      <BookFormDialog
-        open={editDialogOpen.isOpen}
-        onSave={saveEdit}
-        onCancel={editDialogOpen.handleClose}
-        initValues={book}
-      />
+      {
+        editDialogOpen.isOpen &&
+        <BookFormDialog
+          onSave={saveEdit}
+          onCancel={editDialogOpen.handleClose}
+          initValues={book}
+        />
+      }
 
-      <ConfirmDialog
-        content={`Please confirm you want to delete book ${book.name}`}
-        onYes={deleteThisBook}
-        onNo={deleteDialogOpen.handleClose}
-        open={deleteDialogOpen.isOpen}
-      />
+      {
+        deleteDialogOpen.isOpen &&
+        <ConfirmDialog
+          content={`Please confirm you want to delete book ${book.name}`}
+          onYes={deleteThisBook}
+          onNo={deleteDialogOpen.handleClose}
+        />
+      }
+
     </Root>
   )
 };
