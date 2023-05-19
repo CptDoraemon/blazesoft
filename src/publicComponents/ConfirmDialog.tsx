@@ -41,7 +41,6 @@ const ConfirmDialog = ({open, title, content, onYes, onNo}: ConfirmDialogProps) 
       <DualButtonDialogActions
         handleCancel={onNo}
         handleSubmit={onYes}
-        isLoading={false}
         submitButtonProps={{
           variant: 'outlined',
           children: 'Yes',

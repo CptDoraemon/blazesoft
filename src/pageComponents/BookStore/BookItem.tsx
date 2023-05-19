@@ -24,11 +24,11 @@ const TopRow = styled("div")(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   flex: "1 1 auto",
-}));
+})) as typeof Typography;
 
 const Price = styled(Typography)(({ theme }) => ({
   flex: "0 0 auto"
-}));
+})) as typeof Typography;
 
 const Category = styled(Typography)(({ theme }) => ({
   padding: theme.spacing(0.5, 2),
@@ -39,7 +39,7 @@ const Category = styled(Typography)(({ theme }) => ({
   display: "block",
   width: "fit-content",
   fontWeight: 600
-}));
+})) as typeof Typography;
 
 interface BookItemProps {
   book: BookWithID

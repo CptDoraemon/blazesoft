@@ -5,7 +5,7 @@ import useBookStore from "@/pageComponents/BookStore/useBookStore";
 import BookItem from "@/pageComponents/BookStore/BookItem";
 import {useMount} from "react-use";
 import AddBookButton from "@/pageComponents/BookStore/AddBookButton";
-import {Box, Grid} from "@mui/material";
+import {Grid} from "@mui/material";
 
 const Root = styled('div')(({ theme }) => ({
   padding: theme.spacing(2)

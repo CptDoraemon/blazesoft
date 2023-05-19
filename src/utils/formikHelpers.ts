@@ -1,9 +1,10 @@
 import startCase from "lodash/startCase";
-import {Formik} from "formik";
+import {FormikValues} from "formik";
+import {TextFieldProps} from "@mui/material";
 
 const getLabel = (key: string) => startCase(key);
 
-const getTextFieldPropsFromFormik = (key: string, formik: Formik) => {
+const getTextFieldPropsFromFormik = (key: string, formik: FormikValues): TextFieldProps => {
   return {
     id: key,
     name: key,

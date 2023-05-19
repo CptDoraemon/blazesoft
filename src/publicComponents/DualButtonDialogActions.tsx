@@ -16,7 +16,7 @@ interface DualButtonDialogActionsProps {
   cancelButtonProps?: ButtonProps
 }
 
-const DualButtonDialogActions = ({handleSubmit, handleCancel, isLoading, submitButtonProps, cancelButtonProps}: DualButtonDialogActionsProps) => {
+const DualButtonDialogActions = ({handleSubmit, handleCancel, submitButtonProps, cancelButtonProps}: DualButtonDialogActionsProps) => {
   return (
     <DialogActions sx={{py: 2}}>
       <Grid container spacing={2} alignItems={'center'} justifyContent={'center'}>
@@ -25,7 +25,6 @@ const DualButtonDialogActions = ({handleSubmit, handleCancel, isLoading, submitB
             onClick={handleSubmit}
             variant={'contained'}
             disableElevation
-            disabled={isLoading}
             // eslint-disable-next-line react/no-children-prop
             children={'Submit'}
             {...submitButtonProps}
@@ -35,7 +34,6 @@ const DualButtonDialogActions = ({handleSubmit, handleCancel, isLoading, submitB
           <Button
             onClick={handleCancel}
             variant={'outlined'}
-            disabled={isLoading}
             // eslint-disable-next-line react/no-children-prop
             children={'Cancel'}
             {...cancelButtonProps}

@@ -1,15 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {bookSlice} from "./slices/book/book";
 
-const getStore = () => {
-  return configureStore({
-    reducer: {
-      books: bookSlice.reducer
-    },
-  });
-}
-
-export const store = getStore();
+export const store = configureStore({
+  reducer: {
+    books: bookSlice.reducer
+  },
+  middleware: getDefaultMiddleware => getDefaultMiddleware({
+    thunk: {
+      extraArgument: ""
+    }
+  })
+});
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
