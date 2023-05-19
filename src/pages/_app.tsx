@@ -25,6 +25,7 @@ function MyApp(props: MyAppProps) {
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <title>Blazesoft Code Challenge - Xiaoxi Yu</title>
+          <meta name="description" content="Blazesoft Code Challenge - Made by Xiaoxi Yu" />
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
