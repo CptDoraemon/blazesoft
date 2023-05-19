@@ -124,7 +124,7 @@ const BookItem = ({book}: BookItemProps) => {
       {
         deleteDialogOpen.isOpen &&
         <ConfirmDialog
-          content={`Please confirm you want to delete book ${book.name}`}
+          content={<span>Please confirm you want to <strong>DELETE</strong> book <strong>{book.name}</strong></span>}
           onYes={deleteThisBook}
           onNo={deleteDialogOpen.handleClose}
         />
